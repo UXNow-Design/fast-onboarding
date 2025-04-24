@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX Now - Onboarding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-slate-100 to-slate-200 text-slate-800 font-sans min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Progress indicator -->
+        <div class="flex justify-between mb-6 max-w-lg mx-auto">
+            <div class="step active">
+                <div class="step-circle">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <span>Willkommen</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step">
+                <div class="step-circle">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <span>Use-Cases</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step">
+                <div class="step-circle">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <span>Setup</span>
+            </div>
+        </div>
+        
+        <!-- Onboarding Flow Container -->
+        <div id="onboarding-flow" class="bg-white rounded-xl shadow-2xl overflow-hidden">
+            <!-- Screen 1: Welcome -->
+            <div id="screen-welcome" class="onboarding-screen active">
+                <div class="p-10 flex flex-col items-center relative overflow-hidden">
+                    <!-- Background decorative elements -->
+                    <div class="absolute -top-20 -right-20 w-40 h-40 bg-blue-500 opacity-10 rounded-full"></div>
+                    <div class="absolute -bottom-20 -left-20 w-40 h-40 bg-indigo-500 opacity-10 rounded-full"></div>
+                    
+                    <div class="welcome-logo">
+                        <div class="welcome-logo-inner">
+                            <i class="fas fa-chart-line text-3xl"></i>
+                        </div>
+                    </div>
+                    
+                    <h1 class="text-4xl font-bold mb-2 mt-4 text-center">Willkommen, <span id="user-name" class="text-blue-600">Max</span>!</h1>
+                    <p class="text-slate-600 text-center text-lg mb-8 max-w-lg">Wir freuen uns, dass du UX Now ausprobierst. Lass uns dein persönliches Dashboard einrichten.</p>
+                    
+                    <div class="mb-10 grid grid-cols-2 gap-4 w-full max-w-lg">
+                        <div class="bg-blue-50 rounded-lg p-4 text-center border border-blue-100">
+                            <i class="fas fa-bolt text-blue-500 text-2xl mb-2"></i>
+                            <h3 class="text-sm font-medium">Schnelles Setup</h3>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-4 text-center border border-blue-100">
+                            <i class="fas fa-paint-brush text-blue-500 text-2xl mb-2"></i>
+                            <h3 class="text-sm font-medium">Personalisierung</h3>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-4 text-center border border-blue-100">
+                            <i class="fas fa-cubes text-blue-500 text-2xl mb-2"></i>
+                            <h3 class="text-sm font-medium">Module wählen</h3>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-4 text-center border border-blue-100">
+                            <i class="fas fa-rocket text-blue-500 text-2xl mb-2"></i>
+                            <h3 class="text-sm font-medium">Sofort loslegen</h3>
+                        </div>
+                    </div>
+                    
+                    <button class="next-button bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-medium py-3 px-8 rounded-lg transition-all shadow-lg hover:shadow-xl w-full sm:w-auto">
+                        <span>Los geht's!</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Screen 2: Use-Case Selection -->
+            <div id="screen-use-cases" class="onboarding-screen">
+                <div class="p-10">
+                    <h2 class="text-3xl font-bold mb-2 text-center sm:text-left">Wofür möchtest du UX Now nutzen?</h2>
+                    <p class="text-slate-600 mb-6 text-lg text-center sm:text-left">Wähle die Use-Cases aus, die für dich relevant sind.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="use-case-option p-4 border border-slate-200 rounded-lg hover:border-blue-500 cursor-pointer transform transition-all hover:translate-x-1">
+                            <div class="flex items-start">
+                                <div class="mr-3 mt-1">
+                                    <input type="checkbox" id="usecase-1" class="mt-1 mr-2">
+                                </div>
+                                <div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-users text-blue-500 mr-2"></i>
+                                        <label for="usecase-1" class="font-medium text-lg block mb-1 cursor-pointer">Nutzerforschung</label>
+                                    </div>
+                                    <p class="text-slate-500 text-sm">Befragungen erstellen und Interviews planen</p>
+                                    <div class="mt-2 flex flex-wrap gap-1">
+                                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Interviews</span>
+                                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Umfragen</span>
+                                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Personas</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="use-case-option p-4 border border-slate-200 rounded-lg hover:border-blue-500 cursor-pointer transform transition-all hover:translate-x-1">
+                            <div class="flex items-start">
+                                <div class="mr-3 mt-1">
+                                    <input type="checkbox" id="usecase-2" class="mt-1 mr-2">
+                                </div>
+                                <div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-pencil-ruler text-blue-500 mr-2"></i>
+                                        <label for="usecase-2" class="font-medium text-lg block mb-1 cursor-pointer">Prototyping</label>
+                                    </div>
+                                    <p class="text-slate-500 text-sm">Interaktive Prototypen schnell und einfach erstellen</p>
+                                    <div class="mt-2 flex flex-wrap gap-1">
+                                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Wireframes</span>
+                                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Mockups</span>
+                                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Interaktionen</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="use-case-option p-4 border border-slate-200 rounded-lg hover:border-blue-500 cursor-pointer transform transition-all hover:translate-x-1">
+                            <div class="flex items-start">
+                                <div class="mr-3 mt-1">
+                                    <input type="checkbox" id="usecase-3" class="mt-1 mr-2">
+                                </div>
+                                <div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-vial text-blue-500 mr-2"></i>
+                                        <label for="usecase-3" class="font-medium text-lg block mb-1 cursor-pointer">Usability-Tests</label>
+                                    </div>
+                                    <p class="text-slate-500 text-sm">Tests durchführen und Ergebnisse analysieren</p>
+                                    <div class="mt-2 flex flex-wrap gap-1">
+                                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">A/B Tests</span>
+                                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Heatmaps</span>
+                                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Analytics</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="use-case-option p-4 border border-slate-200 rounded-lg hover:border-blue-500 cursor-pointer transform transition-all hover:translate-x-1">
+                            <div class="flex items-start">
+                                <div class="mr-3 mt-1">
+                                    <input type="checkbox" id="usecase-4" class="mt-1 mr-2">
+                                </div>
+                                <div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-layer-group text-blue-500 mr-2"></i>
+                                        <label for="usecase-4" class="font-medium text-lg block mb-1 cursor-pointer">Design-System</label>
+                                    </div>
+                                    <p class="text-slate-500 text-sm">Komponenten verwalten und dokumentieren</p>
+                                    <div class="mt-2 flex flex-wrap gap-1">
+                                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Komponenten</span>
+                                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Styleguide</span>
+                                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Konsistenz</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between flex-wrap gap-2">
+                        <button class="back-button flex items-center text-slate-600 font-medium py-2 px-4 rounded-lg hover:bg-slate-100 transition-colors">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            <span>Zurück</span>
+                        </button>
+                        <button class="next-button flex items-center bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition-all shadow-lg hover:shadow-xl">
+                            <span>Weiter</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Screen 3: Dashboard Setup -->
+            <div id="screen-dashboard-setup" class="onboarding-screen">
+                <div class="p-10">
+                    <h2 class="text-3xl font-bold mb-2 text-center sm:text-left">Dashboard wird eingerichtet</h2>
+                    <p class="text-slate-600 mb-6 text-lg text-center sm:text-left">Wir konfigurieren dein Dashboard basierend auf deinen Auswahlen.</p>
+                    
+                    <div class="mb-8">
+                        <div class="progress-container bg-slate-200 rounded-full h-3 mb-6 relative overflow-hidden">
+                            <div id="progress-bar" class="progress-bar h-3 rounded-full" style="width: 25%"></div>
+                        </div>
+                        
+                        <div class="bg-slate-50 border border-slate-100 rounded-xl p-4 sm:p-6 mb-6">
+                            <div id="setup-status">
+                                <!-- Status-Element 1: Nutzerprofil -->
+                                <div class="flex items-center mb-4 status-item">
+                                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3 static-icon">
+                                        <i class="fas fa-user text-white text-sm"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between">
+                                            <span class="text-slate-700 font-medium text-sm sm:text-base">Nutzerprofil erstellt</span>
+                                            <span class="text-green-500"><i class="fas fa-check"></i></span>
+                                        </div>
+                                        <div class="text-xs text-slate-500 mt-1">Deine Informationen wurden gespeichert</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Status-Element 2: Präferenzen -->
+                                <div class="flex items-center mb-4 status-item">
+                                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3 static-icon">
+                                        <i class="fas fa-heart text-white text-sm"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between">
+                                            <span class="text-slate-700 font-medium text-sm sm:text-base">Präferenzen gespeichert</span>
+                                            <span class="text-green-500"><i class="fas fa-check"></i></span>
+                                        </div>
+                                        <div class="text-xs text-slate-500 mt-1">Deine Use-Case Auswahl wurde übernommen</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Status-Element 3: Module -->
+                                <div class="flex items-center mb-4 status-item">
+                                    <div id="modules-status" class="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin mr-3 flex items-center justify-center"></div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between flex-wrap">
+                                            <span class="text-slate-700 font-medium text-sm sm:text-base">Module werden konfiguriert...</span>
+                                            <span class="text-blue-500 status-progress">
+                                                <span id="module-progress">Fast fertig...</span>
+                                            </span>
+                                        </div>
+                                        <div class="text-xs text-slate-500 mt-1" id="configuring-message">Deine ausgewählten Module werden installiert</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Status-Element 4: Dashboard -->
+                                <div class="flex items-center mb-2 status-item text-slate-400">
+                                    <div class="w-8 h-8 border-2 border-slate-300 rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-desktop text-slate-300 text-sm"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between flex-wrap">
+                                            <span class="font-medium text-sm sm:text-base">Dashboard wird vorbereitet</span>
+                                            <span class="text-slate-300">
+                                                <i class="fas fa-hourglass-half"></i>
+                                            </span>
+                                        </div>
+                                        <div class="text-xs text-slate-400 mt-1">Dein persönliches Dashboard wird erstellt</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="setup-complete" class="hidden">
+                                <div class="flex flex-col items-center py-4">
+                                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-green-500 rounded-full flex items-center justify-center mb-4">
+                                        <i class="fas fa-check text-white text-2xl sm:text-3xl"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-center mb-2">Setup abgeschlossen!</h3>
+                                    <p class="text-slate-600 text-center mb-4 text-sm sm:text-base">Dein Dashboard ist fertig eingerichtet und kann jetzt genutzt werden.</p>
+                                    <div class="flex space-x-2 items-center">
+                                        <i class="fas fa-check-circle text-green-500"></i>
+                                        <span class="text-sm text-slate-600">Alle Module wurden erfolgreich installiert</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-indigo-50 border border-indigo-100 rounded-lg p-4 mb-6 hidden" id="dashboard-preview">
+                            <h3 class="font-medium text-indigo-800 mb-2 flex items-center text-sm sm:text-base">
+                                <i class="fas fa-eye mr-2"></i>
+                                Dashboard Vorschau
+                            </h3>
+                            <div class="dashboard-mockup bg-white rounded border border-indigo-200 p-3 h-32 sm:h-40 flex flex-col">
+                                <div class="flex justify-between items-center mb-3">
+                                    <div class="bg-slate-200 h-3 sm:h-4 w-20 sm:w-24 rounded"></div>
+                                    <div class="flex space-x-1">
+                                        <div class="bg-slate-200 h-3 sm:h-4 w-3 sm:w-4 rounded-full"></div>
+                                        <div class="bg-slate-200 h-3 sm:h-4 w-3 sm:w-4 rounded-full"></div>
+                                        <div class="bg-slate-200 h-3 sm:h-4 w-3 sm:w-4 rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="flex-1 grid grid-cols-3 gap-2">
+                                    <div class="bg-slate-100 rounded"></div>
+                                    <div class="bg-slate-100 rounded col-span-2"></div>
+                                    <div class="bg-slate-100 rounded col-span-2"></div>
+                                    <div class="bg-slate-100 rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between flex-wrap gap-2">
+                        <button class="back-button flex items-center text-slate-600 font-medium py-2 px-4 rounded-lg hover:bg-slate-100 transition-colors">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            <span>Zurück</span>
+                        </button>
+                        <button id="finish-button" class="flex items-center bg-slate-400 text-white font-medium py-2 px-6 rounded-lg transition-all opacity-50 cursor-not-allowed">
+                            <span>Fertigstellen</span>
+                            <i class="fas fa-check ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
